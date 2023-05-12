@@ -1,0 +1,37 @@
+<br><br>
+<div class="center" style="padding: 3%;">
+<div class="mb-3">
+    <label for="articlename" class="form-label">Name</label>
+    <input type="text" class="form-control" [(ngModel)]="article.name" #articleName>
+</div>
+
+<div class="mb-3">
+    <label for="articlecompany" class="form-label">Company</label>
+    <input type="text" class="form-control" [(ngModel)]="article.company" #articleCompany>
+</div>
+
+<div class="mb-3">
+    <label for="articleposition" class="form-label">Position</label>
+    <input type="text" class="form-control" [(ngModel)]="article.position" #articlePosition>
+</div>
+
+<div class="mb-3">
+    <label for="articleemail" class="form-label">Email</label>
+    <input type="text" class="form-control" [(ngModel)]="article.email" #articleEmail>
+</div>
+
+<div class="mb-3">
+    <label for="articleaddress" class="form-label">Address</label>
+    <textarea type="text" class="form-control" [(ngModel)]="article.address" #articleAddress rows="3"></textarea>
+</div>
+
+<div class="mb-3">
+    <label for="articleoffice" class="form-label">Office No.</label>
+    <input type="text" class="form-control" [(ngModel)]="article.office" #articleOffice>
+</div>
+
+<div>
+    <button type="button" class="btn btn-success" (click)="update(articleName.value,articleCompany.value,articlePosition.value,articleEmail.value,articleAddress.value,articleOffice.value)">Update</button>
+</div>
+
+</div>

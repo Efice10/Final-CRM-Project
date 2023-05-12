@@ -1,0 +1,29 @@
+<br><br><br>
+<div *ngIf="!isAdmin">
+<div class="container mt-5">
+    
+    <table class="table table-bordered">
+        <thead>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Company</th>
+            <th scope="col">Position</th>
+            <th scope="col">Email</th>
+            <th scope="col">Address</th>
+            <th scope="col">Office No.</th>
+        </thead>
+        <tbody *ngIf="articles.length">
+            <tr *ngFor="let article of articles">
+                <td>{{article.id}}</td>
+                <td>{{article.name}}</td>
+                <td>{{article.company}}</td>
+                <td>{{article.position}}</td>
+                <td>{{article.email}}</td>
+                <td>{{article.address}}</td>
+                <td>{{article.office}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+</div>
+</div>

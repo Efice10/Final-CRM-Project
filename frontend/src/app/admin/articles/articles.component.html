@@ -1,0 +1,33 @@
+<br><br><br>
+<div *ngIf="!isAdmin">
+<div class="container mt-5" >
+    
+    <table class="table table-bordered">
+        <thead>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Company</th>
+            <th scope="col">Position</th>
+            <th scope="col">Email</th>
+            <th scope="col">Address</th>
+            <th scope="col">Office No.</th>
+            <th scope="col">Action</th>
+        </thead>
+        <tbody *ngIf="articles.length">
+            <tr *ngFor="let article of articles">
+                <td>{{article.id}}</td>
+                <td>{{article.name}}</td>
+                <td>{{article.company}}</td>
+                <td>{{article.position}}</td>
+                <td>{{article.email}}</td>
+                <td>{{article.address}}</td>
+                <td>{{article.office}}</td>
+                <td><button class="btn btn-info" routerLink="/edit/{{article.id}}">Edit</button>&nbsp;<button class="btn btn-danger" (click)="deleteArticle(article.id)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <td><button class="btn btn-success" routerLink="/new-article">Add New</button></td>
+</div>
+
+</div>

@@ -1,0 +1,39 @@
+<br><br>
+
+<div class="center" style="padding: 3%;">
+
+<div class="mb-3">
+    <label for="articlename" class="form-label">Name</label>
+    <input type="text" class="form-control" #articleName required>
+</div>
+
+<div class="mb-3">
+    <label for="articlecompany" class="form-label">Company</label>
+    <input type="text" class="form-control" #articleCompany required>
+</div>
+
+<div class="mb-3">
+    <label for="articleposition" class="form-label">Position</label>
+    <input type="text" class="form-control" #articlePosition required>
+</div>
+
+<div class="mb-3">
+    <label for="articleemail" class="form-label">Email</label>
+    <input type="text" class="form-control" #articleEmail required>
+</div>
+
+<div class="mb-3">
+    <label for="articleaddress" class="form-label">Address</label>
+    <textarea type="text" class="form-control" #articleAddress rows="3" required></textarea>
+</div>
+
+<div class="mb-3">
+    <label for="articleoffice" class="form-label">Office No.</label>
+    <input type="text" class="form-control" #articleOffice required>
+</div>
+
+<div>
+    <button type="button" class="btn btn-success" (click)="add(articleName.value,articleCompany.value,articlePosition.value,articleEmail.value,articleAddress.value,articleOffice.value);
+    articleName.value='';articleCompany.value='';articlePosition.value='';articleEmail.value='';articleAddress.value='';articleOffice.value=''">Add</button>
+</div>
+</div>

@@ -1,0 +1,22 @@
+<br><br><br><br><br>
+<div class="container">
+    <div class="card inner-main">
+      <div class="card-header">
+        User Profile
+      </div>
+      <div class="card-body">
+        <p class="card-text">Name : <strong>{{UserProfile?.name}}</strong></p>
+        <p class="card-text">Email : <strong>{{UserProfile?.email}}</strong></p>
+        <p class="card-text">Company : <strong>{{UserProfile?.company}}</strong></p>
+        <p class="card-text">Position : <strong>{{UserProfile?.position}}</strong></p>
+        <p class="card-text">Phone : <strong>+6{{UserProfile?.phone}}</strong></p>
+        <p class="card-text">Role : <strong>{{UserProfile?.role}}</strong></p>
+        <br>
+        <a routerLink="/profile-edit" class="btn btn-block btn-primary">
+          Edit Profile
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
