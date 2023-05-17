@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TokenService } from './shared/token.service';
 import { AuthStateService } from './shared/auth-state.service';
+import { AuthService, User } from './shared/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -14,12 +15,19 @@ export class AppComponent implements OnInit {
 
   isSignedIn!: boolean;
   userRole!: string;
+  company!: string;
+  UserProfile!: User;
 
   constructor(
     private auth: AuthStateService,
     private router: Router,
-    private token: TokenService
-  ) {}
+    private token: TokenService,
+    public authService: AuthService
+  ) {
+    this.authService.profileUser().subscribe((data: any) => {
+      this.UserProfile = data;
+    });
+  }
 
   ngOnInit() {
     this.auth.userAuthState.subscribe((val) => {
@@ -33,7 +41,8 @@ export class AppComponent implements OnInit {
   signOut() {
     this.auth.setAuthState(false);
     this.token.removeToken();
-    this.router.navigate(['login']);
+    this.router.navigateByUrl('/login');
+    
   }
 
   navigateToArticles() {

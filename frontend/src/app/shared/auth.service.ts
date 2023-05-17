@@ -8,6 +8,7 @@ export class User {
   email!: string;
   password!: string;
   password_confirmation!: string;
+  company!: string;
 }
 
 @Injectable({

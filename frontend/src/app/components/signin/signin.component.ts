@@ -22,6 +22,7 @@ export class SigninComponent implements OnInit {
     private token: TokenService,
     private authState: AuthStateService,
     private auth: AuthStateService,
+
   ) {
     this.loginForm = this.fb.group({
       email: [],
@@ -45,11 +46,13 @@ export class SigninComponent implements OnInit {
       () => {
         if (this.isSignedIn) {
           this.authState.setAuthState(true);
+          
           console.log('Submit button clicked!');
+
           if (this.isAdmin) {
-            this.router.navigate(['/articles']);
+            this.router.navigateByUrl('/articles');
           } else {
-            this.router.navigate(['/userarticles']);
+            this.router.navigateByUrl('/userarticles');
           }
           this.loginForm.reset();
         } else {

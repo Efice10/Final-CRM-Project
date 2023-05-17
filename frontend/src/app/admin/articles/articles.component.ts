@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticleService } from '../../services/article.service';
 import { HttpClient } from '@angular/common/http';
+import { AuthService,User } from 'src/app/shared/auth.service';
 
 @Component({
   selector: 'app-articles',
@@ -10,10 +11,14 @@ import { HttpClient } from '@angular/common/http';
 export class ArticlesComponent implements OnInit {
 
   isAdmin!: boolean;
+  UserProfile!: User;
 
-  constructor(private articleService: ArticleService, private http: HttpClient) {
+  constructor(private articleService: ArticleService, private http: HttpClient, public authService: AuthService) {
     this.http.get('/api/user').subscribe((user: any) => {
       this.isAdmin = user.role === 'admin';
+    });
+    this.authService.profileUser().subscribe((data: any) => {
+      this.UserProfile = data;
     });
   }
 

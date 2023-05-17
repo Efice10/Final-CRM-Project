@@ -20,3 +20,9 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/company/create', [CompanyController::class, 'create']);
+Route::get('/company/read', [CompanyController::class, 'read']);
+Route::get('/company/update', [CompanyController::class, 'update']);
+Route::get('/company/delete', [CompanyController::class, 'delete']);
+
